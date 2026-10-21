@@ -1,0 +1,31 @@
+shop_name = "Campus Stationary shop"
+print("welcome to the", shop_name)
+print("Available items: pen, Notebook, Pencil, Erazor")
+customer_name = input("Customer name:")
+selected_item = input("choose an Items:")
+unit_price = float(input("unit Price:"))
+quantity = int(input("Quantity:")) 
+amount_paid = float(input("amount paid"))
+student_answer = input("Are you a student? (yes/no):")
+
+subtotal=unit_price*quantity
+discount=subtotal*0.10
+discount_amount=subtotal-discount
+service_charge=discount_amount*0.05
+final_total=discount_amount+service_charge
+payment_difference = amount_paid-final_total
+
+print("subtotal:", subtotal)
+print("final total:", final_total)
+print("payment difference", payment_difference)
+
+available_items = ["Pen", "notebook", "Pencil" "Erazor"]
+points = 0
+points+=quantity
+item_is_valid=selected_item in available_items
+payment_is_enough=amount_paid>=final_total
+student_eligible=(subtotal>=1000)and(student_answer=="yes")
+print("points:", points)
+print("valid item", item_is_valid)
+print("payment enough", payment_is_enough)
+print("student eligible", student_eligible)
